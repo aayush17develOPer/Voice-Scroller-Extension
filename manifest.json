@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Voice Scroll PDF",
+  "version": "1.0",
+  "description": "Scroll through PDFs using voice commands.",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
